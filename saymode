@@ -1,4 +1,11 @@
 #!/bin/bash
+######################################################################################
+#Script Name	    :saymode             
+#Description	    :This script will allows greater accessibility with speech                                                                                                                                                             
+#Author          	:thiivalente                                                
+#Email         	    :thiagoavalente@gmail.com
+#Link               :https://github.com/thiivalente/saymode                                       
+######################################################################################
 
 clear
 
