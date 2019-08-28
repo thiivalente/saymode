@@ -12,9 +12,8 @@ do
     read -r -p "================================
 - Select your language:
 
-0 - English ( en_US )
+0 - Default
 1 - Portuguese ( Brasil )
-2 - Spanish ( Argentina )
 ================================
 Your choice: " language
 done
@@ -31,16 +30,8 @@ Say:
 # Varable to define language - By default = language computer
 voice=""
 
-if [[ $language == 0 ]]
-# English
-then
-    voice="-v Luciana"
-elif [[ $language == 1 ]] 
+if [[ $language == 1 ]] 
 # Brazil - Portuguese
-then 
-    voice="-v Luciana"
-elif [[ $language == 2 ]] 
-# Spanish
 then 
     voice="-v Luciana"
 fi
