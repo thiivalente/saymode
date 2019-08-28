@@ -12,16 +12,19 @@ do
     read -r -p "================================
 - Select your language:
 
-0 - Default
+0 - English ( United States )
 1 - Portuguese ( Brasil )
+2 - French ( Canada )
+3 - Spanish ( Spain )
+4 - Japanese ( Japan )
 ================================
 Your choice: " language
 done
 
 echo "
 Commands: 
-    -exit to stop the saymode
-    -restart to restart the saymode
+    -q to quit from saymode
+    -r to restart the saymode
     -l to say the last message
 ================================
 Say: 
@@ -30,10 +33,26 @@ Say:
 # Varable to define language - By default = language computer
 voice=""
 
-if [[ $language == 1 ]] 
+if [[ $language == 0 ]] 
+# English - United States
+then 
+    voice="-v Alex"
+elif [[ $language == 1 ]] 
 # Brazil - Portuguese
 then 
     voice="-v Luciana"
+elif [[ $language == 2 ]] 
+# French - Canada
+then 
+    voice="-v Amelie"
+elif [[ $language == 3 ]] 
+# Spanish - Spain
+then 
+    voice="-v Monica"
+elif [[ $language == 4 ]] 
+# Japanese - Japan
+then 
+    voice="-v Kyoko"
 fi
 
 # Infinity loop
@@ -42,10 +61,10 @@ do
     read -r input
     
     #Comands
-    if [[ "$input" == "-restart" ]]
+    if [[ "$input" == "-r" ]]
     then
         exec bash "$0" "$@"
-    elif [[ "$input" == "-exit" ]]
+    elif [[ "$input" == "-q" ]]
     then
         exit
     elif [[ "$input" == "-l" ]]
