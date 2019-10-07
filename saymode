@@ -6,28 +6,24 @@
 #Email         	    :thiagoavalente@gmail.com
 #Link               :https://github.com/thiivalente/saymode                                       
 ######################################################################################
-
 clear
-
 # Declaring Variables
 language=-1
 lastMessage="?"
-
 # Loop to select the correct language
 while [[ $language =~ ^-[0-9]+$ ]]
 do
     read -r -p "================================
 - Select your language:
-
 0 - English ( United States )
 1 - Portuguese ( Brasil )
 2 - French ( Canada )
 3 - Spanish ( Spain )
 4 - Japanese ( Japan )
+5 - Japanese ( Turkey )
 ================================
 Your choice: " language
 done
-
 echo "
 Commands: 
     -q to quit from saymode
@@ -36,10 +32,8 @@ Commands:
 ================================
 Say: 
 "
-
 # Varable to define language - By default = language computer
 voice=""
-
 if [[ $language == 0 ]] 
 # English - United States
 then 
@@ -60,13 +54,15 @@ elif [[ $language == 4 ]]
 # Japanese - Japan
 then 
     voice="-v Kyoko"
+elif [[ $language == 5 ]] 
+# Turkish - Turkey
+then 
+    voice="-v Yelda"
 fi
-
 # Infinity loop
 while true
 do
-    read -r input
-    
+    read -r input   
     #Comands
     if [[ "$input" == "-r" ]]
     then
